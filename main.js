@@ -4,26 +4,24 @@ document.getElementById('myButton').addEventListener('click', function () {
 
 
 function detectUserDevice() {
-
-    let value = "";
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     if (/huawei/i.test(userAgent)) {
-        value = "Huawei";
+        return "Huawei";
     }
     if (/android/i.test(userAgent)) {
-        value = "Android";
+        return "Android";
     }
-    if (/iPad|iPhone|iPod/.test(userAgent)) {
-        value = "Apple";
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "Apple";
     }
     if (/Win32|Win64|Windows|WinCE/.test(userAgent)) {
-        value = "Windows";
+        return "Windows";
     }
     if (/Mac/.test(userAgent)) {
-        value = "Mac OS";
+        return "Mac OS";
     }
 
-    document.getElementById('title').textContent = `Привет пользователь ${value}`
 }
+const v = detectUserDevice()
 
-detectUserDevice()
+document.getElementById('title').textContent = `Привет пользователь ${v}`
