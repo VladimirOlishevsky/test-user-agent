@@ -1,29 +1,29 @@
 document.getElementById('myButton').addEventListener('click', function () {
-    alert('Button clicked!');
+    console.log('Button clicked!');
 });
 
 
 function detectUserDevice() {
+
+    let value = "";
     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
     if (/huawei/i.test(userAgent)) {
-        return "Huawei";
+        value = "Huawei";
     }
     if (/android/i.test(userAgent)) {
-        return "Android";
+        value = "Android";
     }
     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        return "Apple";
+        value = "Apple";
     }
-
     if (/Win32|Win64|Windows|WinCE/.test(userAgent)) {
-        return "Windows";
+        value = "Windows";
     }
-
     if (/Mac/.test(userAgent)) {
-        return "Mac OS";
+        value = "Mac OS";
     }
 
-    return null;
+    document.getElementById('title').textContent = `Привет пользователь ${value}`
 }
 
-console.log(detectUserDevice())
+detectUserDevice()
