@@ -13,7 +13,7 @@ function detectUserDevice() {
     if (/android/i.test(userAgent)) {
         value = "Android";
     }
-    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    if (/iPad|iPhone|iPod/.test(userAgent)) {
         value = "Apple";
     }
     if (/Win32|Win64|Windows|WinCE/.test(userAgent)) {
