@@ -1,4 +1,4 @@
-function detectUserDevice() {
+function redirectBasedOnDevice() {
     var userAgent = navigator.userAgent;
     if (/huawei/i.test(userAgent)) {
         // return "Huawei";
@@ -20,7 +20,8 @@ function detectUserDevice() {
     }
 
 }
-detectUserDevice();
+window.onload = redirectBasedOnDevice;
+// detectUserDevice();
 // const device = detectUserDevice()
 
 // document.getElementById('title').textContent = `Привет! Вы зашли с устройства ${device}`
