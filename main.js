@@ -1,10 +1,5 @@
-document.getElementById('myButton').addEventListener('click', function () {
-    console.log('Button clicked!');
-});
-
-
 function detectUserDevice() {
-    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    var userAgent = navigator.userAgent;
     if (/huawei/i.test(userAgent)) {
         return "Huawei";
     }
@@ -22,6 +17,6 @@ function detectUserDevice() {
     }
 
 }
-const v = detectUserDevice()
+const device = detectUserDevice()
 
-document.getElementById('title').textContent = `Привет пользователь ${v}`
+document.getElementById('title').textContent = `Привет! Вы зашли с устройства ${device}`
