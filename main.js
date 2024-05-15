@@ -20,7 +20,6 @@ function redirectBasedOnDevice() {
     }
 
 }
-window.onload = redirectBasedOnDevice;
 // detectUserDevice();
 // const device = detectUserDevice()
 
