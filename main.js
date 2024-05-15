@@ -1,4 +1,4 @@
-function redirectBasedOnDevice() {
+(function redirectBasedOnDevice() {
     var userAgent = navigator.userAgent;
     if (/huawei/i.test(userAgent)) {
         // return "Huawei";
@@ -18,8 +18,7 @@ function redirectBasedOnDevice() {
     if (/Mac/.test(userAgent)) {
         // return "Mac OS";
     }
-
-}
+})()
 // detectUserDevice();
 // const device = detectUserDevice()
 
